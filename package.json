@@ -10,7 +10,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "fetch-icons": "ts-node --loader ts-node/esm scripts/download-favicons.ts",
+    "fetch-icons": "ts-node scripts/download-favicons.ts",
     "prebuild": "npm run fetch-icons"
   },
   "dependencies": {

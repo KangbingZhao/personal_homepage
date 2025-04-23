@@ -10,6 +10,7 @@ interface LinkItem {
   url: string;
   description?: string;
   tags?: string[];
+  icon?: string;
 }
 
 interface Category {
@@ -124,7 +125,17 @@ export default function Home({ data }: Props) {
                 rel="noopener noreferrer"
                 className="block hover:underline"
               >
-                <div className="font-medium text-lg">{link.title}</div>
+                <div className="flex items-center gap-2 font-medium text-lg">
+                  {link.icon && (
+                    <img
+                      src={link.icon}
+                      alt="icon"
+                      className="w-5 h-5 rounded"
+                      style={{ minWidth: 20 }}
+                    />
+                  )}
+                  {link.title}
+                </div>
                 <div className="text-sm text-gray-500 mb-1">{link.description}</div>
                 <div className="flex flex-wrap gap-1 mt-2">
                   {link.tags?.map(tag => (

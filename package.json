@@ -4,21 +4,29 @@
   "private": true,
   "homepage": "https://zhaokangbing.cn/personal_homepage",
   "scripts": {
+    "predev": "npm run fetch-icons",
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "fetch-icons": "ts-node scripts/download-favicons.ts",
+    "prebuild": "npm run fetch-icons",
+    "build:static": "next build && next export"
   },
   "dependencies": {
     "classnames": "^2.3.2",
+    "follow-redirects": "^1.15.9",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@types/node": "22.14.1",
+    "@types/react": "19.1.2",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.4"
   }
 }

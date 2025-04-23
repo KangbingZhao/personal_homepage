@@ -29,6 +29,8 @@ export default function Home({ data }: Props) {
   const [activeCategory, setActiveCategory] = useState(data.categories[0]?.name || "");
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   // 新增：监听search变化，实现全局搜索自动切tab
   useEffect(() => {
     if (!search) {
@@ -128,7 +130,7 @@ export default function Home({ data }: Props) {
                 <div className="flex items-center gap-2 font-medium text-lg">
                   {link.icon && (
                     <img
-                      src={link.icon}
+                      src={basePath + link.icon}
                       alt="icon"
                       className="w-5 h-5 rounded"
                       style={{ minWidth: 20 }}

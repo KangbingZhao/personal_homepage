@@ -28,6 +28,26 @@ export default function Home({ data }: Props) {
   const [activeCategory, setActiveCategory] = useState(data.categories[0]?.name || "");
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
+  // 新增：监听search变化，实现全局搜索自动切tab
+  useEffect(() => {
+    if (!search) {
+      setActiveCategory(data.categories[0]?.name || "");
+      return;
+    }
+    const q = search.toLowerCase();
+    for (const cat of data.categories) {
+      const hasMatch = cat.links.some(link =>
+        link.title.toLowerCase().includes(q) ||
+        link.description?.toLowerCase().includes(q) ||
+        link.tags?.some(tag => tag.toLowerCase().includes(q))
+      );
+      if (hasMatch) {
+        setActiveCategory(cat.name);
+        break;
+      }
+    }
+  }, [search, data.categories]);
+
   // 获取当前激活分类对象
   const currentCategory = data.categories.find(cat => cat.name === activeCategory) || data.categories[0];
 

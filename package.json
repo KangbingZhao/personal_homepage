@@ -7,7 +7,10 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "fetch-icons": "ts-node scripts/download-favicons.ts",
+    "prebuild": "npm run fetch-icons",
+    "build:static": "next build && next export"
   },
   "dependencies": {
     "classnames": "^2.3.2",

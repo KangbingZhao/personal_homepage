@@ -19,6 +19,3 @@ logs/
 # Ignore editor settings
 .vscode/
 .idea/
-
-# 忽略图标文件
-public/icons/

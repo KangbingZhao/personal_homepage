@@ -38,6 +38,9 @@ jobs:
       - name: Disable Next.js Telemetry
         run: npx next telemetry disable
 
+      - name: Show Next.js cache
+        run: ls -l .next/cache || echo "No cache found"
+
       - name: Build & Export
         run: npm run build
 

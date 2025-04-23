@@ -35,9 +35,13 @@ const linksData: LinksJson = JSON.parse(fs.readFileSync(linksPath, "utf-8"));
 const allLinks = linksData.categories.flatMap(c => c.links);
 
 function downloadFavicon(domain: string, dest: string): Promise<void> {
+  const filePath = path.join(iconsDir, dest);
+  if (fs.existsSync(filePath)) {
+    // 已存在则跳过下载
+    return Promise.resolve();
+  }
   const url = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
   return new Promise((resolve, reject) => {
-    const filePath = path.join(iconsDir, dest);
     const req = https.get(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; favicon-downloader/1.0)'

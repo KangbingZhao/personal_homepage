@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://zhaokangbing.cn/personal_homepage",
   "scripts": {
+    "predev": "npm run fetch-icons",
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
@@ -19,9 +20,12 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@types/node": "22.14.1",
+    "@types/react": "19.1.2",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.4"
   }
 }

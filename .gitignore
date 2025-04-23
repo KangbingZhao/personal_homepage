@@ -20,3 +20,6 @@ logs/
 .vscode/
 .idea/
 .DS_Store
+
+# 忽略图标文件
+public/icons/

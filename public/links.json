@@ -7,13 +7,21 @@
           "title": "Google",
           "url": "https://www.google.com/",
           "description": "全球最大的搜索引擎",
-          "tags": ["搜索", "工具"]
+          "tags": [
+            "搜索",
+            "工具"
+          ],
+          "icon": "/icons/www.google.com.png"
         },
         {
           "title": "Bing",
           "url": "https://www.bing.com/",
           "description": "微软的搜索引擎",
-          "tags": ["搜索", "工具"]
+          "tags": [
+            "搜索",
+            "工具"
+          ],
+          "icon": "/icons/www.bing.com.png"
         }
       ]
     },
@@ -24,13 +32,21 @@
           "title": "Postman",
           "url": "https://www.postman.com/",
           "description": "强大的 API 调试工具",
-          "tags": ["API", "测试"]
+          "tags": [
+            "API",
+            "测试"
+          ],
+          "icon": "/icons/www.postman.com.png"
         },
         {
           "title": "Regex101",
           "url": "https://regex101.com/",
           "description": "正则表达式测试工具",
-          "tags": ["正则", "调试"]
+          "tags": [
+            "正则",
+            "调试"
+          ],
+          "icon": "/icons/regex101.com.png"
         }
       ]
     },
@@ -41,13 +57,21 @@
           "title": "Bilibili",
           "url": "https://www.bilibili.com/",
           "description": "哔哩哔哩，ACG 文化社区",
-          "tags": ["视频", "动画"]
+          "tags": [
+            "视频",
+            "动画"
+          ],
+          "icon": "/icons/www.bilibili.com.png"
         },
         {
           "title": "YouTube",
           "url": "https://www.youtube.com/",
           "description": "全球最大的视频分享网站",
-          "tags": ["视频", "娱乐"]
+          "tags": [
+            "视频",
+            "娱乐"
+          ],
+          "icon": "/icons/www.youtube.com.png"
         }
       ]
     }

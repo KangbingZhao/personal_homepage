@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import https from "https";
-import { URL } from "url";
+import { URL, fileURLToPath } from "url";
 
 interface LinkItem {
   title: string;
@@ -20,6 +20,9 @@ interface LinksJson {
   categories: Category[];
 }
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const linksPath = path.resolve(__dirname, "../public/links.json");
 const iconsDir = path.resolve(__dirname, "../public/icons");
 
@@ -37,7 +40,9 @@ function downloadFavicon(domain: string, dest: string): Promise<void> {
       const filePath = path.join(iconsDir, dest);
       const file = fs.createWriteStream(filePath);
       res.pipe(file);
-      file.on("finish", () => file.close(resolve));
+      file.on("finish", () => {
+        file.close(() => resolve());
+      });
     }).on("error", reject);
   });
 }

@@ -41,8 +41,8 @@ jobs:
       - name: Show Next.js cache
         run: ls -l .next/cache || echo "No cache found"
 
-      - name: Build & Export
-        run: npm run build:static
+      - name: Build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

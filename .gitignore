@@ -19,3 +19,4 @@ logs/
 # Ignore editor settings
 .vscode/
 .idea/
+.DS_Store

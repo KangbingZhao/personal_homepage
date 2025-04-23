@@ -10,7 +10,7 @@ logs/
 *.log
 
 # Ignore system files
-.DS_Store
+**/.DS_Store
 
 # Ignore environment variables
 .env
@@ -19,7 +19,6 @@ logs/
 # Ignore editor settings
 .vscode/
 .idea/
-.DS_Store
 
 # 忽略图标文件
 public/icons/
